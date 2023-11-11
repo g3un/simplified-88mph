@@ -2,7 +2,7 @@
 
 https://medium.com/immunefi/88mph-theft-of-unclaimed-mph-rewards-bugfix-review-1dec98b9956b
 
-## Useage
+## Usage
 
 ```bash
 $ npx hardhat node
