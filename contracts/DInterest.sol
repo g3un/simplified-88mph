@@ -66,7 +66,7 @@ contract DInterest {
     Deposit memory _deposit = deposits[_vesting.depositId];
     require(_deposit.alive);
 
-    uint256 _reward = (_deposit.depositAmount * (_deposit.endTimestamp - _vesting.lastRewardedTimestamp)) / 1000;
+    uint256 _reward = (_deposit.depositAmount * (uint64(block.timestamp) - _vesting.lastRewardedTimestamp)) / 1000;
     mphToken.transfer(msg.sender, _reward);
     _deposit.endTimestamp = uint64(block.timestamp) + 1666551940; // after 1 month
     _vesting.lastRewardedTimestamp = uint64(block.timestamp);
